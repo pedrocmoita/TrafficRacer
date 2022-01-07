@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+    overflow: hidden;
+    font-family: 'Josefin Sans';
+}
+
+body{
+    margin: 0;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    overflow-y: hidden;
+}
+
+.night{
+    height: 80vh;
+    width: 70vw;
+    margin: 5rem auto; /*ajusta a imagem ao centro do ecrã*/
+    background: url("./images/bgimg.jpg");
+    background-size: cover;
+    position: relative;
+    box-shadow: 1px 2px 60px rgba(0, 0, 0, 0.4);
+    overflow-x: hidden;
+}
+
+.night::after {
+    content: "";
+    position: absolute;
+    top: 84%;
+    z-index: 1;
+    background-color: #161415;
+    height: 8px;
+    width: 100%;
+}
+
+.surface{
+    height: 275px;
+    width: 10000%;
+    background: url("./images/Img_03.png");
+    background-repeat: repeat-x;
+    filter: hue-rotate(45deg);
+    display: block;
+    position: absolute;
+    top: 64%;
+    animation: carMovingLeft 15s linear infinite;
+}
+
+.car{
+    position: absolute;
+    bottom: 14.9%;
+    left: 40%;
+    animation: carSuspension 1s linear infinite;
+    z-index: 2;
+}
+
+@keyframes carMovingLeft{
+    100%{transform: translateX(-8000px);}
+}
+
+@keyframes carSuspension{
+    100%{transform: translateY(-1px);}
+    50%{transform: translateY(2px);}
+    0%{transform: translateY(-1px);}
+}
+
+#wheel-front{
+    position: absolute;
+    right: 59px;
+    top: 70px;
+    animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+#wheel-back{
+    position: absolute;
+    left: 71px;
+    top: 70px;
+    animation: rotation 1s infinite linear; 
+}
+
+/*--------------------------------------------------PLAY BTN------------------------------------------------*/
+
+a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, yellow, orange, red, violet, purple, blue, yellow);
+    background-size: 400%;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+a:hover {
+    animation: btnAnimation 8s linear infinite;
+}
+
+@keyframes btnAnimation {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+}
+
+a:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(45deg, #f15523, #ef3224, #7c3697);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5%;
+}
+
+a:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: btnAnimation 8s linear infinite;
+}  
+
+/*--------------------------------------------------------------------------------------------------------*/
