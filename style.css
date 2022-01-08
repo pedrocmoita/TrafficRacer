@@ -61,6 +61,31 @@ body {
     animation: btnAnimation 8s linear infinite;
 }  
 
+.controls{
+    position: absolute;
+    top: 37%;
+    color: #454545;
+    left: 66%;
+}
+
+.arrowkeys{
+    position: absolute;
+    top: 42%;
+    font-size: 50px;
+    background: white;
+    color: #454545;
+    padding: 1px 5px 5px 5px;
+    box-shadow: 4px 4px 0px 1px #808080;
+}
+
+#key_left{
+    left: 65%;
+}
+
+#key_right{
+    left: 70%;
+}
+
 #container{
     position: relative;
     height: 90vh;
@@ -146,7 +171,7 @@ body {
     position: absolute;
     height: 50px;
     width: 5px;
-    background-color: black;
+    background-color: #525252;
 }
 
 #pilar_left_1{
